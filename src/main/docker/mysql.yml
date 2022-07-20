@@ -1,0 +1,14 @@
+version: '2'
+services:
+  someapp-mysql:
+    image: mysql:8.0.20
+    # volumes:
+    #     - ~/volumes/jhipster/someapp/mysql/:/var/lib/mysql/
+    environment:
+      - MYSQL_USER=someapp
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=someapp
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - 3306:3306
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
